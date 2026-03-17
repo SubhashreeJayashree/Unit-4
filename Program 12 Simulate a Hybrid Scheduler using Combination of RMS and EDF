@@ -1,0 +1,12 @@
+# Hybrid Scheduler Simulation using RMS and EDF
+
+tasks = [
+    {"id": 1, "period": 4, "deadline": 4},
+    {"id": 2, "period": 5, "deadline": 3},
+    {"id": 3, "period": 8, "deadline": 6}
+]
+
+# Select task using RMS (smallest period) and EDF (smallest deadline as tie-breaker)
+selected = min(tasks, key=lambda x: (x["period"], x["deadline"]))
+
+print("Selected Task = T" + str(selected["id"]))
